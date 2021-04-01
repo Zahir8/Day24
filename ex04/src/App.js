@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class App extends Component {
   getLocalStorage = () => {
-    myLocalStorageData = localStorage.getItem("Arena");
+    let myLocalStorageData = localStorage.getItem("Arena");
   }
   
   render() {
