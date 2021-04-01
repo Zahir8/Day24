@@ -2,13 +2,27 @@ import React, {Component} from 'react';
 
 class App extends Component {
   setMyStorage = () => {
-    document.cookie.setItem("Ywar", 2021);
+    document.cookie="Year=2021";
     localStorage.setItem("Paragon", "yes, but Arena first");
     sessionStorage.setItem("frontend", "React");
   }
+  getCookie = (name) => {
+    
+    var cookieArr = document.cookie.split(";");
+    
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+        
+        if(name == cookiePair[0].trim()) {
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    
+    return null;
+  }
   
   getMyStorage = () => {
-    let myCookieData = document.cookie.getItem("Year", 2021);
+    let myCookieData = this.getCookie("Year=2021");
     let myLocalStorageData = localStorage.getItem("Paragon", "yes, but Arena first");
     let mySessionStorageData = sessionStorage.setItem("frontend", "React");
   }
