@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-        <button onClick={this.setMyStorage}></button>
+        <button onClick={this.setMyStorage}>Button1</button>
       </div>
     )
   }
